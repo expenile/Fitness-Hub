@@ -1,95 +1,31 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
+import Navbar from "../app/components/navbar";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="d-flex flex-column min-vh-100">
+      <Navbar />
+      <header className="d-flex flex-column justify-content-center align-items-center text-center bg-primary text-light flex-grow-1" style={{ backgroundColor: "#1e88e5", padding: "60px 15px" }}>
+        <h1 className="display-3 fw-bold mb-4">Achieve Your Fitness Goals</h1>
+        <p className="lead mb-4">Track your health and fitness with our comprehensive tools and stay motivated.</p>
+        <div className="d-flex flex-wrap justify-content-center">
+          <Link href="/fitness-challenge-tracker" className="btn btn-light btn-lg mx-2 mb-2 mb-md-0">
+            Fitness Challenge Tracker
+          </Link>
+          <Link href="/calorie-tracker" className="btn btn-light btn-lg mx-2 mb-2 mb-md-0">
+            Nutrition Meter
+          </Link>
+          <Link href="/health-tracker" className="btn btn-light btn-lg mx-2 mb-2 mb-md-0">
+            Health Tracker
+          </Link>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      </header>
+      <footer className="bg-dark text-light text-center py-3">
+        <div className="container">
+          <p className="mb-0">&copy; 2024 Fitness Hub. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
   );
 }
